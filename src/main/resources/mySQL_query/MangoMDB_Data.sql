@@ -7,10 +7,10 @@ USE MangoMDB;
 
 SET AUTOCOMMIT=0;
 INSERT INTO User VALUE
-    (1, 'Sam Kuo', 'account1', 'samkuo'),
-    (2, 'Joan Wu', 'account2', 'jaonwu'),
-    (3, 'Zongyao Li', 'account3', 'zongyaoli'),
-    (4, 'Yichen Hao', 'account4', 'yichenhao');
+    (1, 'account1', 'samkuo'),
+    (2, 'account2', 'jaonwu'),
+    (3, 'account3', 'zongyaoli'),
+    (4, 'account4', 'yichenhao');
 COMMIT;
 
 SET AUTOCOMMIT=0;
@@ -39,6 +39,26 @@ COMMIT;
 
 SET AUTOCOMMIT=0;
 INSERT INTO OrderDetail VALUE
+    (1, 1, 1),
+    (1, 2, 2),
+    (1, 4, 3),
+    (1, 8, 1),
+    (2, 6, 1),
+    (2, 9, 1),
+    (2, 11, 1),
+    (3, 1, 1),
+    (3, 3, 2),
+    (3, 6, 1),
+    (3, 9, 2),
+    (4, 1, 1),
+    (4, 2, 2),
+    (4, 5, 2),
+    (4, 7, 2),
+    (4, 12, 1);
+COMMIT;
+
+SET AUTOCOMMIT=0;
+INSERT INTO StorageDetail VALUE
     (1, 1, 1),
     (1, 2, 2),
     (1, 4, 3),

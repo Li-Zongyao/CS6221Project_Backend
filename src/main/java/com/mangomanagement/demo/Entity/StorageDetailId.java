@@ -3,13 +3,13 @@ package com.mangomanagement.demo.Entity;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class OrderDetailId implements Serializable {
-    private Integer orderId;
+public class StorageDetailId implements Serializable {
+    private Integer userId;
     private Integer itemId;
 
     @Override
     public int hashCode() {
-        return Objects.hash(orderId, itemId);
+        return Objects.hash(userId, itemId);
     }
 
     @Override
@@ -21,16 +21,16 @@ public class OrderDetailId implements Serializable {
             return false;
         }
 
-        OrderDetailId Id = (OrderDetailId) obj;
-        return Objects.equals(this.orderId, Id.orderId) && Objects.equals(this.itemId, Id.itemId);
+        StorageDetailId Id = (StorageDetailId) obj;
+        return Objects.equals(this.userId, Id.userId) && Objects.equals(this.itemId, Id.itemId);
     }
 
-    public Integer getOrderId() {
-        return orderId;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Integer getItemId() {
