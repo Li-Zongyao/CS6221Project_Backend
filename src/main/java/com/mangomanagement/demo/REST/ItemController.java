@@ -32,17 +32,19 @@ public class ItemController {
 
         for (StorageDetail detail : list) {
             Item item = itemService.findById(detail.getItemId());
-            StorageInfo info = new StorageInfo(item.getItemId(), item.getItemName(), detail.getRemaining());
+            StorageInfo info = new StorageInfo(item.getItemId(), item.getItemName(), detail.getRemaining(),
+                    detail.getPurchaseFrequency(), detail.getPurchaseFrequency_User());
             res.add(info);
         }
-        System.out.println("haha");
 
         return res;
     }
 
     @PostMapping("addNewItem")
-    public void addItem(@RequestBody Item item) {
+    public String addItem(@RequestBody Item item) {
+        String res = "Add item " + item.getItemName() + " successfully.";
         itemService.save(item);
+        return res;
     }
 
     @PostMapping("addNewItemIntoStorage")
