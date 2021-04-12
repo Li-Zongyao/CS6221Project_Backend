@@ -32,8 +32,10 @@ public class ItemController {
 
         for (StorageDetail detail : list) {
             Item item = itemService.findById(detail.getItemId());
+            double purchaseFrequency = detail.getPurchaseFrequency_User() == 0.0 ?
+                                                detail.getPurchaseFrequency() : detail.getPurchaseFrequency_User();
             StorageInfo info = new StorageInfo(item.getItemId(), item.getItemName(), detail.getRemaining(),
-                    detail.getPurchaseFrequency(), detail.getPurchaseFrequency_User());
+                    purchaseFrequency);
             res.add(info);
         }
 
@@ -89,6 +91,8 @@ public class ItemController {
             storageDetail.setItemId(oldItem.getItemId());
             storageDetail.setRemaining(number);
             storageDetail.setUserId(user.getUserId());
+            storageDetail.setPurchaseFrequency(0.0);
+            storageDetail.setPurchaseFrequency_User(0.0);
         }
         storageService.save(storageDetail);
 
